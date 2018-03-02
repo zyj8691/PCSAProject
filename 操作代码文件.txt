@@ -1,0 +1,25 @@
+copy *.h E:\花键程序备份\PCSAProject
+
+copy *.cpp E:\花键程序备份\PCSAProject
+
+copy *.ui E:\花键程序备份\PCSAProject
+
+copy *.txt E:\花键程序备份\PCSAProject
+
+copy *.tif E:\花键程序备份\PCSAProject
+
+copy *.exe E:\花键程序备份\PCSAProject
+
+copy *.qrc E:\花键程序备份\PCSAProject
+
+copy *.shm E:\花键程序备份\PCSAProject
+
+copy *.cfg E:\花键程序备份\PCSAProject
+
+copy *.png E:\花键程序备份\PCSAProject
+
+copy *.lib E:\花键程序备份\PCSAProject
+
+copy *.sav E:\花键程序备份\PCSAProject
+
+copy *.sav E:\花键程序备份\PCSAProject
