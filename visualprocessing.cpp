@@ -2019,6 +2019,11 @@ void VisualProcessing::stepTwoLeftFlangeHoleProcessing(int num, HObject inputIma
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -2270,6 +2275,11 @@ void VisualProcessing::stepTwoRightFlangeHoleProcessing(int num, HObject inputIm
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -2508,6 +2518,11 @@ void VisualProcessing::stepThreeLeftProcessing(int num, HObject inputImageFirst,
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -2748,6 +2763,11 @@ void VisualProcessing::stepThreeRightProcessing(int num, HObject inputImageFirst
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -2959,6 +2979,11 @@ void VisualProcessing::stepThreeLeftFlangeHoleProcessing(int num, HObject inputI
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -3176,6 +3201,11 @@ void VisualProcessing::stepThreeRightFlangeHoleProcessing(int num, HObject input
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -3448,6 +3478,11 @@ void VisualProcessing::stepFourLeftProcessing(int num, HObject inputImageFirst, 
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -3741,6 +3776,11 @@ void VisualProcessing::stepFourRightProcessing(int num, HObject inputImageFirst,
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 
 		}
@@ -3984,6 +4024,11 @@ void VisualProcessing::stepFiveLeftProcessing(int num, HObject inputImageFirst, 
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else
@@ -4224,6 +4269,11 @@ void VisualProcessing::stepFiveRightProcessing(int num, HObject inputImageFirst,
 			bool planeparamStatus = true;
 			//边缘点集转化为PCL点云
 			alg->threeDimensionToPCLPoints(filterBorderPoints, borderCloud_ptr);
+			//赋值centerResult结构值
+			centerResult.NormalVector.A = planeparam.A;
+			centerResult.NormalVector.B = planeparam.B;
+			centerResult.NormalVector.C = planeparam.C;
+			centerResult.radius = averageDistance;
 			emit sendProcessingResult(planeparamStatus, planeparam, centerResult, borderCloud_ptr, num);
 		}
 		else

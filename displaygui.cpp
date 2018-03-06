@@ -389,7 +389,7 @@ void DisplayGUI::displayCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr Cloud_ptr, Cor
 		viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 5, "center_cloud");
 		/*viewer_1->resetCamera();
 		ui.PCLwidget_1->update();*/
-
+		//创建理论圆
 		pcl::PointCloud<pcl::PointXYZ>::Ptr theroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
 		createTheoryCircle(centerResult,theroyCirclePoints);
 		//圆心点云设置
@@ -444,6 +444,7 @@ void DisplayGUI::displayCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr LeftCloud_ptr/
 	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 5, "rightCenter_cloud");
 	/*viewer_1->resetCamera();
 	ui.PCLwidget_1->update();*/
+	//创建理论圆
 	pcl::PointCloud<pcl::PointXYZ>::Ptr leftTheroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
 	pcl::PointCloud<pcl::PointXYZ>::Ptr rightTheroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
 	createTheoryCircle(leftCenterResult, leftTheroyCirclePoints);
@@ -535,6 +536,26 @@ void DisplayGUI::displayCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr LeftCloud_ptr/
 	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "rightFlangeHoleCloud");
 	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 5, "leftFlangeHoleCenter_cloud");
 	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 5, "rightFlangeHoleCenter_cloud");
+	/*viewer_1->resetCamera();
+	ui.PCLwidget_1->update();*/
+	//创建理论圆
+	pcl::PointCloud<pcl::PointXYZ>::Ptr leftTheroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
+	pcl::PointCloud<pcl::PointXYZ>::Ptr rightTheroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
+	createTheoryCircle(leftCenterResult, leftTheroyCirclePoints);
+	createTheoryCircle(RightCenterResult, rightTheroyCirclePoints);
+
+	//圆心点云设置
+	//设置点云颜色
+	//viewer_1->removePointCloud("theroyCircleCloud");
+	pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> leftTheroyCircleCloud_color(leftTheroyCirclePoints, 255, 0, 0);
+	pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> rightTheroyCircleCloud_color(rightTheroyCirclePoints, 255, 0, 0);
+
+	//点云颜色渲染	
+	viewer_1->addPointCloud(leftTheroyCirclePoints, leftTheroyCircleCloud_color, "leftTheroyCirclePoints");
+	viewer_1->addPointCloud(rightTheroyCirclePoints, rightTheroyCircleCloud_color, "rightTheroyCirclePoints");
+	//设置点云大小
+	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 0.5, "leftTheroyCirclePoints");
+	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 0.5, "rightTheroyCirclePoints");
 	viewer_1->resetCamera();
 	ui.PCLwidget_1->update();
 }
@@ -597,6 +618,26 @@ void DisplayGUI::displayCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr LeftCloud_ptr/
 
 	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "FlangeHoleCloud");
 	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 5, "FlangeHoleCenter_cloud");
+	//viewer_1->resetCamera();
+	//ui.PCLwidget_1->update();
+	//创建理论圆
+	pcl::PointCloud<pcl::PointXYZ>::Ptr leftTheroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
+	pcl::PointCloud<pcl::PointXYZ>::Ptr rightTheroyCirclePoints(new pcl::PointCloud<pcl::PointXYZ>);
+	createTheoryCircle(leftCenterResult, leftTheroyCirclePoints);
+	createTheoryCircle(RightCenterResult, rightTheroyCirclePoints);
+
+	//圆心点云设置
+	//设置点云颜色
+	//viewer_1->removePointCloud("theroyCircleCloud");
+	pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> leftTheroyCircleCloud_color(leftTheroyCirclePoints, 255, 0, 0);
+	pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> rightTheroyCircleCloud_color(rightTheroyCirclePoints, 255, 0, 0);
+
+	//点云颜色渲染	
+	viewer_1->addPointCloud(leftTheroyCirclePoints, leftTheroyCircleCloud_color, "leftTheroyCirclePoints");
+	viewer_1->addPointCloud(rightTheroyCirclePoints, rightTheroyCircleCloud_color, "rightTheroyCirclePoints");
+	//设置点云大小
+	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 0.5, "leftTheroyCirclePoints");
+	viewer_1->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 0.5, "rightTheroyCirclePoints");
 	viewer_1->resetCamera();
 	ui.PCLwidget_1->update();
 }

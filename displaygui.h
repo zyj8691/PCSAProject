@@ -77,6 +77,7 @@ public:
 
 	//定义函数
 	//显示点云
+	//理论圆为红色
 	//左侧圆心为红色，右侧为绿色
 	void displayCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr LeftCloud_ptr/*左侧点云*/, CoreAlgorithm::StereoCircle leftCenterResult/*左侧圆心*/,
 		pcl::PointCloud<pcl::PointXYZ>::Ptr RightCloud_ptr/*右侧点云*/, CoreAlgorithm::StereoCircle RightCenterResult/*右侧圆心*/);
