@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
-    <height>596</height>
+    <width>903</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="setButton">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>120</y>
+     <x>700</x>
+     <y>200</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="updataButton">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>70</y>
+     <x>700</x>
+     <y>160</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -73,7 +73,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -3926,8 +3926,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>98</width>
-      <height>28</height>
+      <width>581</width>
+      <height>443</height>
      </rect>
     </property>
     <attribute name="label">
@@ -4237,6 +4237,67 @@
      </widget>
     </widget>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>50</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发动机型号：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>80</y>
+     <width>161</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>YZ1003A/YS3003</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>WZ1001/WS3001</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>WZ1019/WS3005</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>WZ218/WS301</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>WZ1008A/WS3005A</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="openButton">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>120</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

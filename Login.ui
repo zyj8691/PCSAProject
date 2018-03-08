@@ -51,7 +51,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="passwordEdit"/>
+       <widget class="QLineEdit" name="passwordEdit">
+        <property name="text">
+         <string>Astropulsion_SHU</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

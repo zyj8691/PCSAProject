@@ -126,6 +126,8 @@ signals:
 							int num/*num = 1 表示传输左侧测量参数；num = 2 表示传输右侧测量参数*/);
 	void sendStepParam(double CameraNoScanSpeed, double CameraScanDistance, double CameraFirstNoScanDistance, double CameraSecondNoScanDistance);
 public slots:
+	//打开数据
+	void on_openButton_clicked();
 	//更改相关数据
 	void on_updataButton_clicked();
 	//关闭使能
@@ -139,9 +141,14 @@ public slots:
 	void receiveRightGratingData(vector<double>right);
 	//接收机器人位姿
 	void receiveRobotPose(RobotPose robotPo);
+	//读取工位配置参数（按照发动机型号）
+	void readStepConfigSlot();
 private:
 	Ui::VisualProcessing ui;
 	CoreAlgorithm *alg;
+
+	QStringList engineTypeArray;
+	QStringList engineTypeFileNameArray;
 
 	
 };
@@ -155,6 +162,8 @@ public:
 
 public slots:
 void on_loginButton_clicked();
+//读取工位配置参数（按照发动机型号）
+void readStepConfigSlot();
 private:
 	Ui::Form ui;
 	VisualProcessing *vp;

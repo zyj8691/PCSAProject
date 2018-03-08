@@ -94,6 +94,7 @@ public:
         label->setText(QApplication::translate("Form", "\350\264\246\345\217\267\357\274\232", Q_NULLPTR));
         accountEdit->setText(QApplication::translate("Form", "Astropulsion", Q_NULLPTR));
         label_2->setText(QApplication::translate("Form", "\345\257\206\347\240\201\357\274\232", Q_NULLPTR));
+        passwordEdit->setText(QApplication::translate("Form", "Astropulsion_SHU", Q_NULLPTR));
         loginButton->setText(QApplication::translate("Form", "\347\231\273\345\275\225", Q_NULLPTR));
     } // retranslateUi
 

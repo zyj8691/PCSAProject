@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -594,18 +595,21 @@ public:
     QLineEdit *EyeInHand_M31;
     QLineEdit *EyeInHand_M32;
     QLineEdit *EyeInHand_M33;
+    QLabel *label;
+    QComboBox *comboBox;
+    QPushButton *openButton;
 
     void setupUi(QWidget *VisualProcessing)
     {
         if (VisualProcessing->objectName().isEmpty())
             VisualProcessing->setObjectName(QStringLiteral("VisualProcessing"));
-        VisualProcessing->resize(789, 596);
+        VisualProcessing->resize(903, 580);
         setButton = new QPushButton(VisualProcessing);
         setButton->setObjectName(QStringLiteral("setButton"));
-        setButton->setGeometry(QRect(640, 120, 75, 23));
+        setButton->setGeometry(QRect(700, 200, 75, 23));
         updataButton = new QPushButton(VisualProcessing);
         updataButton->setObjectName(QStringLiteral("updataButton"));
-        updataButton->setGeometry(QRect(640, 70, 75, 23));
+        updataButton->setGeometry(QRect(700, 160, 75, 23));
         toolBox = new QToolBox(VisualProcessing);
         toolBox->setObjectName(QStringLiteral("toolBox"));
         toolBox->setGeometry(QRect(30, 40, 581, 521));
@@ -3341,7 +3345,7 @@ public:
         toolBox->addItem(page_2, QString::fromUtf8("\347\272\265\347\275\256\345\217\221\345\212\250\346\234\272\345\217\202\346\225\260"));
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
-        page_3->setGeometry(QRect(0, 0, 98, 28));
+        page_3->setGeometry(QRect(0, 0, 581, 443));
         tabWidget_3 = new QTabWidget(page_3);
         tabWidget_3->setObjectName(QStringLiteral("tabWidget_3"));
         tabWidget_3->setGeometry(QRect(40, 0, 491, 441));
@@ -3576,11 +3580,20 @@ public:
 
         tabWidget_3->addTab(tab_22, QString());
         toolBox->addItem(page_3, QString::fromUtf8("\347\233\270\345\205\263\347\237\251\351\230\265\345\217\202\346\225\260"));
+        label = new QLabel(VisualProcessing);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(670, 50, 71, 21));
+        comboBox = new QComboBox(VisualProcessing);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(670, 80, 161, 22));
+        openButton = new QPushButton(VisualProcessing);
+        openButton->setObjectName(QStringLiteral("openButton"));
+        openButton->setGeometry(QRect(700, 120, 75, 23));
 
         retranslateUi(VisualProcessing);
 
         toolBox->setCurrentIndex(0);
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
         tabWidget_2->setCurrentIndex(0);
         tabWidget_3->setCurrentIndex(0);
 
@@ -3952,6 +3965,16 @@ public:
         EyeInHand_M33->setText(QApplication::translate("VisualProcessing", "1", Q_NULLPTR));
         tabWidget_3->setTabText(tabWidget_3->indexOf(tab_22), QApplication::translate("VisualProcessing", "\346\211\213\347\234\274\346\240\207\345\256\232\347\237\251\351\230\265", Q_NULLPTR));
         toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("VisualProcessing", "\347\233\270\345\205\263\347\237\251\351\230\265\345\217\202\346\225\260", Q_NULLPTR));
+        label->setText(QApplication::translate("VisualProcessing", "\345\217\221\345\212\250\346\234\272\345\236\213\345\217\267\357\274\232", Q_NULLPTR));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("VisualProcessing", "YZ1003A/YS3003", Q_NULLPTR)
+         << QApplication::translate("VisualProcessing", "WZ1001/WS3001", Q_NULLPTR)
+         << QApplication::translate("VisualProcessing", "WZ1019/WS3005", Q_NULLPTR)
+         << QApplication::translate("VisualProcessing", "WZ218/WS301", Q_NULLPTR)
+         << QApplication::translate("VisualProcessing", "WZ1008A/WS3005A", Q_NULLPTR)
+        );
+        openButton->setText(QApplication::translate("VisualProcessing", "\346\211\223\345\274\200", Q_NULLPTR));
     } // retranslateUi
 
 };

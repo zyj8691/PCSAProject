@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_DisplayGUI_t {
-    QByteArrayData data[40];
-    char stringdata0[673];
+    QByteArrayData data[41];
+    char stringdata0[688];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,29 +46,30 @@ QT_MOC_LITERAL(13, 175, 11), // "rightRunDis"
 QT_MOC_LITERAL(14, 187, 13), // "sendRobotPose"
 QT_MOC_LITERAL(15, 201, 27), // "VisualProcessing::RobotPose"
 QT_MOC_LITERAL(16, 229, 9), // "robotPose"
-QT_MOC_LITERAL(17, 239, 17), // "networkActionSlot"
-QT_MOC_LITERAL(18, 257, 16), // "motionActionSlot"
-QT_MOC_LITERAL(19, 274, 16), // "cameraActionSlot"
-QT_MOC_LITERAL(20, 291, 17), // "eyeHandActionSlot"
-QT_MOC_LITERAL(21, 309, 26), // "visualProcessingActionSlot"
-QT_MOC_LITERAL(22, 336, 13), // "receiveSocket"
-QT_MOC_LITERAL(23, 350, 4), // "info"
-QT_MOC_LITERAL(24, 355, 21), // "displayDataActionSlot"
-QT_MOC_LITERAL(25, 377, 23), // "updateStatusInformation"
-QT_MOC_LITERAL(26, 401, 4), // "Info"
-QT_MOC_LITERAL(27, 406, 23), // "receiveProcessingResult"
-QT_MOC_LITERAL(28, 430, 16), // "planeparamStatus"
-QT_MOC_LITERAL(29, 447, 26), // "CoreAlgorithm::PlaneNormal"
-QT_MOC_LITERAL(30, 474, 10), // "planeparam"
-QT_MOC_LITERAL(31, 485, 27), // "CoreAlgorithm::StereoCircle"
-QT_MOC_LITERAL(32, 513, 12), // "centerResult"
-QT_MOC_LITERAL(33, 526, 35), // "pcl::PointCloud<pcl::PointXYZ..."
-QT_MOC_LITERAL(34, 562, 15), // "borderCloud_ptr"
-QT_MOC_LITERAL(35, 578, 16), // "receiveStepParam"
-QT_MOC_LITERAL(36, 595, 14), // "CamNoScanSpeed"
-QT_MOC_LITERAL(37, 610, 15), // "CamScanDistance"
-QT_MOC_LITERAL(38, 626, 22), // "CamFirstNoScanDistance"
-QT_MOC_LITERAL(39, 649, 23) // "CamSecondNoScanDistance"
+QT_MOC_LITERAL(17, 239, 14), // "sendStepConfig"
+QT_MOC_LITERAL(18, 254, 17), // "networkActionSlot"
+QT_MOC_LITERAL(19, 272, 16), // "motionActionSlot"
+QT_MOC_LITERAL(20, 289, 16), // "cameraActionSlot"
+QT_MOC_LITERAL(21, 306, 17), // "eyeHandActionSlot"
+QT_MOC_LITERAL(22, 324, 26), // "visualProcessingActionSlot"
+QT_MOC_LITERAL(23, 351, 13), // "receiveSocket"
+QT_MOC_LITERAL(24, 365, 4), // "info"
+QT_MOC_LITERAL(25, 370, 21), // "displayDataActionSlot"
+QT_MOC_LITERAL(26, 392, 23), // "updateStatusInformation"
+QT_MOC_LITERAL(27, 416, 4), // "Info"
+QT_MOC_LITERAL(28, 421, 23), // "receiveProcessingResult"
+QT_MOC_LITERAL(29, 445, 16), // "planeparamStatus"
+QT_MOC_LITERAL(30, 462, 26), // "CoreAlgorithm::PlaneNormal"
+QT_MOC_LITERAL(31, 489, 10), // "planeparam"
+QT_MOC_LITERAL(32, 500, 27), // "CoreAlgorithm::StereoCircle"
+QT_MOC_LITERAL(33, 528, 12), // "centerResult"
+QT_MOC_LITERAL(34, 541, 35), // "pcl::PointCloud<pcl::PointXYZ..."
+QT_MOC_LITERAL(35, 577, 15), // "borderCloud_ptr"
+QT_MOC_LITERAL(36, 593, 16), // "receiveStepParam"
+QT_MOC_LITERAL(37, 610, 14), // "CamNoScanSpeed"
+QT_MOC_LITERAL(38, 625, 15), // "CamScanDistance"
+QT_MOC_LITERAL(39, 641, 22), // "CamFirstNoScanDistance"
+QT_MOC_LITERAL(40, 664, 23) // "CamSecondNoScanDistance"
 
     },
     "DisplayGUI\0statusUpdate\0\0"
@@ -78,7 +79,7 @@ QT_MOC_LITERAL(39, 649, 23) // "CamSecondNoScanDistance"
     "vector<double>\0leftRunDis\0"
     "sendRightGratingData\0rightRunDis\0"
     "sendRobotPose\0VisualProcessing::RobotPose\0"
-    "robotPose\0networkActionSlot\0"
+    "robotPose\0sendStepConfig\0networkActionSlot\0"
     "motionActionSlot\0cameraActionSlot\0"
     "eyeHandActionSlot\0visualProcessingActionSlot\0"
     "receiveSocket\0info\0displayDataActionSlot\0"
@@ -99,32 +100,33 @@ static const uint qt_meta_data_DisplayGUI[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   94,    2, 0x06 /* Public */,
-       3,    3,   99,    2, 0x06 /* Public */,
-       8,    1,  106,    2, 0x06 /* Public */,
-       9,    1,  109,    2, 0x06 /* Public */,
-      12,    1,  112,    2, 0x06 /* Public */,
-      14,    1,  115,    2, 0x06 /* Public */,
+       1,    2,   99,    2, 0x06 /* Public */,
+       3,    3,  104,    2, 0x06 /* Public */,
+       8,    1,  111,    2, 0x06 /* Public */,
+       9,    1,  114,    2, 0x06 /* Public */,
+      12,    1,  117,    2, 0x06 /* Public */,
+      14,    1,  120,    2, 0x06 /* Public */,
+      17,    0,  123,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      17,    0,  118,    2, 0x0a /* Public */,
-      18,    0,  119,    2, 0x0a /* Public */,
-      19,    0,  120,    2, 0x0a /* Public */,
-      20,    0,  121,    2, 0x0a /* Public */,
-      21,    0,  122,    2, 0x0a /* Public */,
-      22,    1,  123,    2, 0x0a /* Public */,
-      24,    0,  126,    2, 0x0a /* Public */,
-      25,    2,  127,    2, 0x0a /* Public */,
-      27,    5,  132,    2, 0x0a /* Public */,
-      35,    4,  143,    2, 0x0a /* Public */,
+      18,    0,  124,    2, 0x0a /* Public */,
+      19,    0,  125,    2, 0x0a /* Public */,
+      20,    0,  126,    2, 0x0a /* Public */,
+      21,    0,  127,    2, 0x0a /* Public */,
+      22,    0,  128,    2, 0x0a /* Public */,
+      23,    1,  129,    2, 0x0a /* Public */,
+      25,    0,  132,    2, 0x0a /* Public */,
+      26,    2,  133,    2, 0x0a /* Public */,
+      28,    5,  138,    2, 0x0a /* Public */,
+      36,    4,  149,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
@@ -133,6 +135,7 @@ static const uint qt_meta_data_DisplayGUI[] = {
     QMetaType::Void, 0x80000000 | 10,   11,
     QMetaType::Void, 0x80000000 | 10,   13,
     QMetaType::Void, 0x80000000 | 15,   16,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -140,11 +143,11 @@ static const uint qt_meta_data_DisplayGUI[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   23,
+    QMetaType::Void, QMetaType::QString,   24,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,   26,    4,
-    QMetaType::Void, QMetaType::Bool, 0x80000000 | 29, 0x80000000 | 31, 0x80000000 | 33, QMetaType::Int,   28,   30,   32,   34,    4,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,   36,   37,   38,   39,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,   27,    4,
+    QMetaType::Void, QMetaType::Bool, 0x80000000 | 30, 0x80000000 | 32, 0x80000000 | 34, QMetaType::Int,   29,   31,   33,   35,    4,
+    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,   37,   38,   39,   40,
 
        0        // eod
 };
@@ -161,16 +164,17 @@ void DisplayGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->sendLeftGratingData((*reinterpret_cast< vector<double>(*)>(_a[1]))); break;
         case 4: _t->sendRightGratingData((*reinterpret_cast< vector<double>(*)>(_a[1]))); break;
         case 5: _t->sendRobotPose((*reinterpret_cast< VisualProcessing::RobotPose(*)>(_a[1]))); break;
-        case 6: _t->networkActionSlot(); break;
-        case 7: _t->motionActionSlot(); break;
-        case 8: _t->cameraActionSlot(); break;
-        case 9: _t->eyeHandActionSlot(); break;
-        case 10: _t->visualProcessingActionSlot(); break;
-        case 11: _t->receiveSocket((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 12: _t->displayDataActionSlot(); break;
-        case 13: _t->updateStatusInformation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 14: _t->receiveProcessingResult((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< CoreAlgorithm::PlaneNormal(*)>(_a[2])),(*reinterpret_cast< CoreAlgorithm::StereoCircle(*)>(_a[3])),(*reinterpret_cast< pcl::PointCloud<pcl::PointXYZ>::Ptr(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
-        case 15: _t->receiveStepParam((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
+        case 6: _t->sendStepConfig(); break;
+        case 7: _t->networkActionSlot(); break;
+        case 8: _t->motionActionSlot(); break;
+        case 9: _t->cameraActionSlot(); break;
+        case 10: _t->eyeHandActionSlot(); break;
+        case 11: _t->visualProcessingActionSlot(); break;
+        case 12: _t->receiveSocket((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->displayDataActionSlot(); break;
+        case 14: _t->updateStatusInformation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 15: _t->receiveProcessingResult((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< CoreAlgorithm::PlaneNormal(*)>(_a[2])),(*reinterpret_cast< CoreAlgorithm::StereoCircle(*)>(_a[3])),(*reinterpret_cast< pcl::PointCloud<pcl::PointXYZ>::Ptr(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 16: _t->receiveStepParam((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -218,6 +222,13 @@ void DisplayGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
                 return;
             }
         }
+        {
+            typedef void (DisplayGUI::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&DisplayGUI::sendStepConfig)) {
+                *result = 6;
+                return;
+            }
+        }
     }
 }
 
@@ -246,13 +257,13 @@ int DisplayGUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 17)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 17;
     }
     return _id;
 }
@@ -297,5 +308,11 @@ void DisplayGUI::sendRobotPose(VisualProcessing::RobotPose _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void DisplayGUI::sendStepConfig()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

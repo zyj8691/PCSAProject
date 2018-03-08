@@ -7,6 +7,9 @@ VisualProcessing::VisualProcessing(QWidget *parent)
 	ui.setupUi(this);
 	alg = new CoreAlgorithm(0);
 	lineEdit[lineEditNum] = new QLineEdit();
+	//初始化变量
+	engineTypeArray << "YZ1003A" << "YS3003" << "WZ1001" << "WS3001" << "WZ1019" << "WS3005" << "WZ218" << "WS301" << "WZ1008A" << "WS3005A";
+	engineTypeFileNameArray << "YZ1003A_YS3003_ConfigInSteps" << "WZ1001_WS3001_ConfigInSteps" << "WZ1019_WS3005_ConfigInSteps" << "WZ218_WS301_ConfigInSteps" << "WZ1008A_WS3005A_ConfigInSteps";
 	//初始化lineEdit控件
 	InitializationLineEdit();
 	//读取各个工步及标定参数
@@ -19,9 +22,10 @@ VisualProcessing::VisualProcessing(QWidget *parent)
 	ui.tabWidget_2->setCurrentIndex(0);
 	ui.tabWidget_3->setCurrentIndex(0);
 
+	
 
 }
-
+	
 VisualProcessing::~VisualProcessing()
 {
 	delete alg;
@@ -308,11 +312,59 @@ void VisualProcessing::InitializationLineEdit()
 
 void VisualProcessing::ReadConfigParameterFile()
 {
-	QString fileName = "ConfigFile/ConfigInSteps.txt";
+	//先选择读取哪个配置文件
+	QString fileName = "ConfigFile/engineTypeName.txt";
+	QFile file_et(fileName);
+	if (!file_et.open(QIODevice::ReadOnly | QIODevice::Text))
+	{
+		QMessageBox::warning(this, "Warnning", "engineTypeNameFile can't open", QMessageBox::Yes);
+	}
+	QTextStream in_et(&file_et);
+	QString FName;
+	FName = in_et.readLine();
+	for (int i = 0; i < engineTypeArray.size(); i++)
+	{
+		if (FName == engineTypeArray[i]){
+			cout << i / 2 << endl;
+			FName = engineTypeFileNameArray[i / 2];
+			ui.comboBox->setCurrentIndex(i / 2);
+			cout << ui.comboBox->currentText().toStdString() << endl;
+			cout << FName.toStdString() << endl;
+			break;
+		}
+	}
+	//打开指定文件
+	fileName = "ConfigFile/" + FName + ".txt";
 	QFile file(fileName);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 	{
-		QMessageBox::warning(this, "Warnning", "File can't open", QMessageBox::Yes);
+		QMessageBox::warning(this, "Warnning", "configFile can't open", QMessageBox::Yes);
+	}
+	QTextStream in(&file);
+	double variable;
+	for (int i = 0; i < lineEditNum; i++){
+		variable = in.readLine().toDouble();
+		lineEdit[i]->setText(QString::number(variable));
+	}
+	for (int i = 0; i < lineEditNum; i++){
+		lineEdit[i]->setEnabled(false);
+	}
+}
+
+void VisualProcessing::on_openButton_clicked()
+{
+	//打开指定文件
+	QString fileName = ui.comboBox->currentText(); 
+	for (int i = 0; i < fileName.size(); i++)
+	{
+		if (fileName[i] == QChar('/'))
+			fileName[i] = QChar('_');
+	}
+	fileName = "ConfigFile/"+fileName + "_ConfigInSteps.txt";
+	QFile file(fileName);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+	{
+		QMessageBox::warning(this, "Warnning", "configFile can't open", QMessageBox::Yes);
 	}
 	QTextStream in(&file);
 	double variable;
@@ -324,6 +376,13 @@ void VisualProcessing::ReadConfigParameterFile()
 
 void VisualProcessing::on_setButton_clicked()
 {
+	QString str = ui.comboBox->currentText();
+	cout << str.toStdString() << endl;
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] == QChar('/'))
+			str[i] = QChar('_');
+	}
 	QMessageBox box;
 	box.setWindowTitle(tr("Information"));
 	box.setIcon(QMessageBox::Information);
@@ -333,7 +392,7 @@ void VisualProcessing::on_setButton_clicked()
 	{
 
 		//写入文件
-		QString fileName = "ConfigFile/ConfigInSteps.txt";//写入文件的目录
+		QString fileName = "ConfigFile/" + str + "_ConfigInSteps.txt";//写入文件的目录
 		QFile file(fileName);
 		if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
 		{
@@ -4395,6 +4454,13 @@ double VisualProcessing::deg2rad(double deg)
 	return rad;
 }
 
+void VisualProcessing::readStepConfigSlot()
+{
+	ReadConfigParameterFile();
+}
+
+
+
 
 
 
@@ -4425,4 +4491,9 @@ void Login::on_loginButton_clicked()
 		msgBox.setText("The password is wrong!");
 		msgBox.exec();
 	}
+}
+
+void Login::readStepConfigSlot()
+{
+	vp->ReadConfigParameterFile();
 }

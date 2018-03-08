@@ -244,6 +244,8 @@ signals:
 	void sendRightGratingData(vector<double> rightRunDis);
 	//发送机器人位姿
 	void sendRobotPose(VisualProcessing::RobotPose robotPose);
+	//发送读取工位配置参数文件（根据发动机型号）
+	void sendStepConfig();
 public slots:
 	//打开网口通讯设置
 	void networkActionSlot();

@@ -65,6 +65,8 @@ DisplayGUI::DisplayGUI(QWidget *parent)
 	connect(this, &DisplayGUI::sendLeftGratingData, vp, &VisualProcessing::receiveLeftGratingData);
 	connect(this, &DisplayGUI::sendRightGratingData, vp, &VisualProcessing::receiveRightGratingData);
 	connect(this, &DisplayGUI::sendRobotPose, vp, &VisualProcessing::receiveRobotPose);
+
+	connect(this, &DisplayGUI::sendStepConfig, login, &Login::readStepConfigSlot);
 	//菜单栏按钮
 	//connect(ui.networkAction, SIGNAL(triggered()), this, SLOT(networkButton()));
 	
@@ -3753,6 +3755,25 @@ void DisplayGUI::resolveSignal(QString info)
 		//创建文件夹
 		createProjectDirectory(info);
 		createParamFirle(info);
+		//保存发动机型号
+		QString engineTypeStr;
+		//分解信息，取出发动机型号
+		for (int i = 0; i < info.size(); i++){
+			if (info[i] == 'Y' || info[i] == 'W')
+			{
+				engineTypeStr = info.mid(i, info.size() - 1);
+				break;
+			}
+		}
+		//保存发动机型号
+		fileName = "ConfigFile/engineTypeName.txt";//写入文件的目录
+		QFile file1(fileName);
+		file1.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text);
+		QTextStream out1(&file1);
+		out1 << engineTypeStr << "\n";
+		file1.close();
+		//因为是通过logind对象生成了vp对象，所以必须通过login才能修改vp里的值，直接连接vp无法修改界面
+		emit sendStepConfig();
 	}
 	else if (info.mid(0, 1) == "H" || info.mid(0, 1)=="V"){
 		int infoSize = info.size();
